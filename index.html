@@ -3,6 +3,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jeu Patatique - Accueil</title>
+<link rel="apple-touch-icon" sizes="180x180" href="pat.png">
+<link rel="icon" type="image/png" sizes="32x32" href="pat.png">
+<link rel="icon" type="image/png" sizes="16x16" href="pat.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 <style>
 
 .paque p{
@@ -46,7 +53,7 @@
     body {
         font-family: 'Arial', sans-serif;
         /*background-color: #f0f0f0;*/
-        background-image: url(back.jpeg);
+        background-image: url(back.jpg);
         background-size:cover ;
         background-position:center;
         background-repeat: no-repeat;
@@ -90,7 +97,7 @@
         color: white;
     }
     .content {
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 100px auto;
         padding: 50px;
         background-color: rgba(255, 255, 255, 0.5);
@@ -143,7 +150,7 @@
         background-color: #ff4081;
         color: white;
         padding: 15px 30px;
-        font-size: 1.2em;
+        font-size: 12px;
         text-decoration: none;
         border-radius: 8px;
         transition: background-color 0.3s ease;
@@ -237,7 +244,50 @@
     }
 
 
-
+    /* ... (styles précédents inchangés) ... */
+    .comments {
+        margin-top: 50px;
+        border-top: 2px solid #ff4081;
+        padding-top: 30px;
+    }
+    .comment {
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    .comment-author {
+        font-weight: bold;
+        color: #ff4081;
+        margin-bottom: 10px;
+    }
+    .comment-date {
+        font-size: 0.9em;
+        color: #888;
+        margin-bottom: 10px;
+    }
+    .comment-content {
+        line-height: 1.6;
+    }
+    .comment-actions {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .comment-actions button {
+        background-color: #ff4081;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+        transition: background-color 0.3s ease;
+    }
+    .comment-actions button:hover {
+        background-color: #e91e63;
+    }
 
 
 
@@ -247,7 +297,8 @@
 </style>
 </head>
 <body>
-    
+    <!-- David Hashka foxglov... (Message dynamique) ... -->
+
     <div class="scrolling-div">
             <div class="paque">
                 <p class="unselectable" style="display:inline-flex;">Cliquez 3 fois sur cette barre et bénéficiez d'une réduction à vos date, dans un des restaurants partenaires du Jeu Patatique.</p>
@@ -261,22 +312,23 @@
         </div>
 
 
+
+<!--  David Hashka foxglov ... (Barre nav) ... -->
     <nav class="navbar">
         <div class="navbar-left">
-            <a href="" class="active">Accueil</a>
             <a href="regles.html">Règles</a>
-            <a href="classement.html">Classement</a>
-            <a href="profil.html">Profil</a>
             <a href="contact.html">Contact</a>
-            <a href="scores.html">Scores</a>
-            <a href="games.html">Games</a>
+
         </div>
         <div class="navbar-right">
             <a href="about.html">About</a>
-            <a href="connexion.html">Connexion</a>
+            <a href="connexion.html" class="active">Connexion</a>
         </div>
     </nav>
 
+
+
+<!--  David Hashka foxglov... (Case des divs) ... -->
 
     <div class="content">
         <h1>Bienvenue au Jeu Patatique</h1>
@@ -301,12 +353,72 @@
         </div>
 
         <div class="cta">
-            <a href="games.html" class="cta-button">Commencer l'aventure</a>
+            <a href="connexion.html" class="cta-button">Connexion / Inscription</a>
+        </div>
+    </div>
+
+
+
+ <!-- ...foxglov (Case des commentaires) ... -->
+
+    <div class="content">
+        <!-- foxglov... (contenu précédent inchangé) ... -->
+
+        <div class="comments">
+            <h2>Commentaires récents</h2>
+            
+            <div class="comment">
+                <div class="comment-author">Lucie D (5ans de relation Patatique).</div>
+                <div class="comment-date">Publié le 15 juin 2023</div>
+                <div class="comment-content">
+                    J'adore ce jeu ! Mon partenaire et moi l'utilisons chaque semaine pour notre soirée en tête-à-tête. C'est devenu un véritable rituel qui nous permet de maintenir la flamme et de découvrir de nouvelles choses l'un sur l'autre. Merci pour cette super idée !
+                </div>
+                <div class="comment-actions">
+                    <button onclick="likeComment(this)">J'aime</button>
+                    <button onclick="replyToComment(this)">Répondre</button>
+                </div>
+            </div>
+
+            <div class="comment">
+                <div class="comment-author">Marc T.</div>
+                <div class="comment-date">Publié le 10 juin 2023</div>
+                <div class="comment-content">
+                    Au début, j'étais un peu réticent à l'idée de jouer à un jeu pour couples, mais le Jeu Patatique m'a vraiment surpris ! Les défis sont bien pensés et nous font vraiment rire. C'est une excellente façon de passer du temps ensemble et de renforcer notre complicité.
+                </div>
+                <div class="comment-actions">
+                    <button onclick="likeComment(this)">J'aime</button>
+                    <button onclick="replyToComment(this)">Répondre</button>
+                </div>
+            </div>
+
+            <div class="comment">
+                <div class="comment-author">Sophie M.</div>
+                <div class="comment-date">Publié le 5 juin 2023</div>
+                <div class="comment-content">
+                    Nous utilisons le Jeu Patatique depuis quelques mois maintenant, et c'est incroyable de voir à quel point notre communication s'est améliorée. Les questions profondes nous ont permis d'aborder des sujets que nous n'aurions peut-être jamais évoqués autrement. Un grand merci aux créateurs !
+                </div>
+                <div class="comment-actions">
+                    <button onclick="likeComment(this)">J'aime</button>
+                    <button onclick="replyToComment(this)">Répondre</button>
+                </div>
+            </div>
+
+            <div class="comment">
+                <div class="comment-author">Antoine L.</div>
+                <div class="comment-date">Publié le 1er juin 2023</div>
+                <div class="comment-content">
+                    Le Jeu Patatique est parfait pour les couples à distance comme nous ! Nous y jouons en visio et ça nous permet de maintenir une connexion forte malgré la distance. Les défis sont variés et adaptables, ce qui est vraiment appréciable. Je recommande vivement !
+                </div>
+                <div class="comment-actions">
+                    <button onclick="likeComment(this)">J'aime</button>
+                    <button onclick="replyToComment(this)">Répondre</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // Add some interactivity
+        // Add some interactivity interchangement des couleurs sur les div _foxglov
         document.querySelectorAll('.feature').forEach(feature => {
             feature.addEventListener('mouseover', () => {
                 feature.style.backgroundColor = '#ffe0e0';
@@ -318,29 +430,52 @@
             });
         });
 
-        // Easter egg
+        // Easter egg code promo _foxglov
         let clicks = 0;
         document.querySelector('.paque').addEventListener('click', () => {
             clicks++;
             if (clicks === 3) {
-                alert('Vous avez découvert un œuf de Pâques ! Voici un code secret : PATATE2023');
+                alert('Vous venez de gagnez un code promo pour un date en tête à tête dans tous les restaurants partenaires du jeu patatique : PATATE2023');
                 clicks = 0;
             }
         });
+
+
+        //Script des commentaires _foxglov
+        function likeComment(button) {
+            button.innerHTML = "J'aime ❤";
+            button.disabled = true;
+        }
+
+        function replyToComment(button) {
+            const commentDiv = button.closest('.comment');
+            const replyBox = document.createElement('div');
+            replyBox.innerHTML = `
+                <textarea placeholder="Votre réponse..." rows="3" style="width: 100%; margin-top: 10px;"></textarea>
+                <button onclick="submitReply(this)">Envoyer</button>
+            `;
+            commentDiv.appendChild(replyBox);
+            button.style.display = 'none';
+        }
+
+        function submitReply(button) {
+            const replyText = button.previousElementSibling.value;
+            if (replyText.trim() !== '') {
+                const replyDiv = document.createElement('div');
+                replyDiv.className = 'comment';
+                replyDiv.style.marginLeft = '20px';
+                replyDiv.innerHTML = `
+                    <div class="comment-author">Vous</div>
+                    <div class="comment-date">À l'instant</div>
+                    <div class="comment-content">${replyText}</div>
+                `;
+                button.closest('.comment').appendChild(replyDiv);
+                button.closest('div').remove();
+            }
+        }
     </script>
 
 
-
-
-
-
-<style>
-
-   
-    
-        
-    </style>
-    
 
 
 
@@ -389,6 +524,6 @@
         <div class="footer-bottom">
             <p>&copy; 2023 Jeu Patatique. Tous droits réservés.</p>
         </div>
-    </footer>
+        </footer>
 </body>
 </html>
